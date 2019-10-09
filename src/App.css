@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+
+.type {
+  color: blue;
+}
+
+.height {
+  color: red;
+}
+
+.weaknesses {
+  color: green;
+}
+
+.record {
+  margin: 30px 0;
+}

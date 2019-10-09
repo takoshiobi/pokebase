@@ -1,6 +1,6 @@
 {
-  "short_name": "Pokébase",
-  "name": "Pokébase",
+  "short_name": "Pokebase",
+  "name": "Pokebase react",
   "icons": [
     {
       "src": "favicon.ico",
