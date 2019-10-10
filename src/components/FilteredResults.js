@@ -9,7 +9,13 @@ class FilteredResults extends React.Component {
         this.handleQueryUpdate = this.handleQueryUpdate.bind(this);
         this.handleHeightUpdate = this.handleHeightUpdate.bind(this);
         this.handleWeaknessUpdate = this.handleWeaknessUpdate.bind(this);
-        this.state = {query: "", pokemons: [], res: [], height: [], weakness: ""};
+        
+        this.state = { 
+                       query: "",
+                       pokemons: [],
+                       height: [],
+                       weakness: ""
+                     };
     }
 
     handleQueryUpdate(query) {
@@ -34,35 +40,42 @@ class FilteredResults extends React.Component {
     }
 
     render () {
-        let pokemonsF = this.state.pokemons.filter(pokemon => {
+        // filtering system
+        let {pokemons, weakness, height, query} = this.state;
+        let filteredPokemons = [];
+        pokemons.map(pokemon => {
             for (let i=0; i<pokemon.type.length; i++) {
-                if (pokemon.type[i].toLowerCase().includes(this.state.query.toLocaleLowerCase()) || pokemon.name.toLowerCase().includes(this.state.query.toLocaleLowerCase())) {
-                    return pokemon;
+                if (height[0] < parseFloat(pokemon.height) < height[1] &&
+                    pokemon.weaknesses.includes(weakness) &&
+                    (pokemon.type[i].toLowerCase().includes(query.toLocaleLowerCase()) || pokemon.name.toLowerCase().includes(query.toLocaleLowerCase()))
+                ) {
+                    filteredPokemons.push(pokemon);
                 }
-            }
+            }    
         });
+        
         return (
-            <div className="FiltersContainer__container">
+            <div className="FiltersResults__container">
                 <TextInput onQueryUpdate={this.handleQueryUpdate}/>
                 <HeightFilter onHeightUpdate={this.handleHeightUpdate}/>
                 <WeaknessFilter onWeaknessUpdate={this.handleWeaknessUpdate} pokemonsList={this.state.pokemons} />
-                <div>
+                <div className="FilteredPokemons__container">
                 { 
-                    pokemonsF.map((pokeRecord) => {
-                        return <div className="record" key={pokeRecord.id}> 
-                            <div> {pokeRecord.name} </div>
-                            <div className="type"> {
-                                pokeRecord.type.map((type, i) => <div key={type+i}>{type}</div>)
-                            } </div>
-                            <div className="height">
-                                {pokeRecord.height}
-                            </div>
-                            <div className="weaknesses">
-                                {
-                                    pokeRecord.weaknesses.map((weakness, i) => <div key={weakness+i}>{weakness}</div>)
-                                }
-                            </div>
-                        </div>
+                    filteredPokemons.map((pokeRecord,i) => {
+                        return  <div className="record" key={pokeRecord.id+i}> 
+                                    <div> {pokeRecord.name} </div>
+                                    <div className="Type__container"> 
+                                    {
+                                        pokeRecord.type.map((type, i) => <div className={type.toLocaleLowerCase() + " type"} key={type+i}>{type}</div>)
+                                    }  
+                                    </div>
+                                    <div className="height"> {pokeRecord.height} </div>
+                                    <div className="weaknesses">
+                                    {
+                                        pokeRecord.weaknesses.map((weakness, i) => <div key={weakness+i}>{weakness}</div>)
+                                    }
+                                    </div>
+                                </div>
                     })
                 }
                 </div>

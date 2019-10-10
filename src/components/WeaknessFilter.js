@@ -24,7 +24,7 @@ class WeaknessFilter extends React.Component {
             <div className="WeaknessFilter__container">
                 {
                    res.map((record,i) => {
-                       return <div key={i} onClick={this.handleClick}>
+                       return <div key={i+record} onClick={this.handleClick}>
                             {record}
                        </div>
                    })

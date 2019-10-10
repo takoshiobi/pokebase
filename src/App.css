@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.type {
-  color: blue;
-}
-
 .height {
   color: red;
 }
@@ -16,4 +12,98 @@
 
 .record {
   margin: 30px 0;
+}
+
+/* Types color map */
+
+.App {
+  --fire: #f5222d;
+  --ice: #1890ff;
+  --flying: #eb2f96;
+  --psychic: #6ad9d9;
+  --water: #2f54eb;
+  --ground: #bde55a;
+  --rock: #fa5e29;
+  --electric: #fccb6b;
+  --grass: #52c41a;
+  --fighting: #fadb14;
+  --poison: #a67be2;
+  --bug: #fa8c16;
+  --fairy: #eb2f96;
+  --ghost: #d3d3d3;
+  --dark: #5d0a3e;
+  --steel: #4682b4;
+  --dragon: #ff8b5d;
+}
+
+.type {
+  color: white;
+}
+
+.fire {
+  background-color: var(--fire);
+}
+
+.ice {
+  background-color: var(--ice);
+}
+
+.flying {
+  background-color: var(--psychic);
+}
+
+.psychic {
+  background-color: var(--psychic);
+}
+
+.water {
+  background-color: var(--water);
+}
+
+.ground {
+  background-color: var(--ground);
+}
+
+.rock {
+  background-color: var(--rock);
+}
+
+.electric {
+  background-color: var(--electric);
+}
+
+.grass {
+  background-color: var(--grass);
+}
+
+.fighting {
+  background-color: var(--fighting);
+}
+
+.poison {
+  background-color: var(--poison);
+}
+
+.bug {
+  background-color: var(--bug);
+}
+
+.fairy {
+  background-color: var(--fairy);
+}
+
+.ghost {
+  background-color: var(--ghost);
+}
+
+.dark {
+  background-color: var(--dark);
+}
+
+.steel {
+  background-color: var(--steel);
+}
+
+.dragon {
+  background-color: var(--dragon);
 }

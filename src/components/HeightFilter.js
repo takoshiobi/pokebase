@@ -9,9 +9,7 @@ class HeightFilter extends React.Component {
     }
 
     handleChange(value) {
-        this.props.onHeightUpdate(value); 
-        //console.log(value);
-        
+        this.props.onHeightUpdate(value);         
     }
 
     render() {
