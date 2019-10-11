@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Changing our button name to Hide toggle the button 1`] = `
+<div
+  className="TextInput__container"
+>
+  <div
+    style={
+      Object {
+        "marginBottom": 16,
+      }
+    }
+  >
+    <input
+      className="ant-input"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Name or type of pokémon"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`WeaknessFilter renders correctly 1`] = `
+<div
+  className="TextInput__container"
+>
+  <div
+    style={
+      Object {
+        "marginBottom": 16,
+      }
+    }
+  >
+    <input
+      className="ant-input"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Name or type of pokémon"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

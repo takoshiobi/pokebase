@@ -2,15 +2,9 @@
   text-align: center;
 }
 
-.height {
-  color: red;
-}
+/* Header */
 
-.weaknesses {
-  color: green;
-}
-
-.record {
+.Header__container h1 {
   margin: 30px 0;
 }
 
@@ -19,7 +13,7 @@
 .App {
   --fire: #f5222d;
   --ice: #1890ff;
-  --flying: #eb2f96;
+  --flying: #9bafea;
   --psychic: #6ad9d9;
   --water: #2f54eb;
   --ground: #bde55a;
@@ -29,15 +23,12 @@
   --fighting: #fadb14;
   --poison: #a67be2;
   --bug: #fa8c16;
-  --fairy: #eb2f96;
+  --fairy: #f6b6f2;
   --ghost: #d3d3d3;
   --dark: #5d0a3e;
   --steel: #4682b4;
   --dragon: #ff8b5d;
-}
-
-.type {
-  color: white;
+  --normal: #aaa997;
 }
 
 .fire {
@@ -49,7 +40,7 @@
 }
 
 .flying {
-  background-color: var(--psychic);
+  background-color: var(--flying);
 }
 
 .psychic {
@@ -106,4 +97,112 @@
 
 .dragon {
   background-color: var(--dragon);
+}
+
+.normal {
+  background-color: var(--normal);
+}
+
+.type {
+  transition: background-position 0s ease;
+  color: white;
+  border-radius: 2px;
+  margin-left: 5px;
+  cursor: pointer;
+  padding: 0 5px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  border: 1px solid #5c5b5b;
+  text-shadow: -1px 0 #5c5b5b, 0 1px #5c5b5b, 1px 0 #5c5b5b, 0 -1px #5c5b5b;
+}
+
+.typeResults {
+  font-size: 9px;
+}
+
+/* Pokemon record */
+
+.selectedHeight {
+  color: var(--rock);
+}
+
+.optionWeakness {
+  cursor: default;
+}
+
+.FilteredPokemons__container {
+  margin-top: 58px;
+}
+
+.record {
+  margin-right: 34px;
+  margin-bottom: 60px;
+}
+
+.record img {
+  width: 100px;
+  height: 100px;
+}
+
+.record img:hover {
+  transition: 0.3s;
+  filter: drop-shadow(10px 10px 4px rgb(119, 119, 119));
+}
+
+/* Link styles */
+
+a {
+  text-decoration: none !important;
+}
+
+/* Pokemon Description */
+
+.Description__container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.descriptionImg img {
+  margin: auto;
+  display: block;
+}
+
+.descriptionType {
+  background-color: #2f54eb;
+  cursor: default;
+}
+
+.descriptionType:first-child {
+  margin-left: 15px;
+}
+
+.height {
+  color: #fa5e29;
+}
+
+.weaknesses {
+  margin-left: 0;
+}
+
+.weaknessBadge {
+  background: #52c41a;
+  padding: 1px 5px;
+  cursor: default;
+}
+
+.egg {
+  color: #a67be2;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.goBack {
+  margin: 20px auto;
+  display: table;
 }
