@@ -33,3 +33,5 @@ The current version of this app is far away from what I expected to create. I li
 *Other*
 
 * Share filter parameters as link
+
+![DemoGif](./img/diagram.gif)
