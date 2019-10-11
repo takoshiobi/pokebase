@@ -34,4 +34,4 @@ The current version of this app is far away from what I expected to create. I li
 
 * Share filter parameters as link
 
-![DemoGif](./img/diagram.gif)
+![DemoGif](./img/pokemons.gif)
