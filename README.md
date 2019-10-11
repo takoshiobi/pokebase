@@ -9,7 +9,7 @@
 
 #### Architecture
 
-I think that usage of Redux is an overkill solution for small applications like this one. That's why I decided to use "lift shared state up" solution instead. Here's the diagram showing components interactions. I haven't listed `Header.js` because it renders directly in `App.js`.
+I think that usage of Redux is an overkill solution for small applications like this one. That's why I decided to use "lift shared state up" solution instead. Here's the diagram showing components interactions. I haven't listed [`Header.js`](./src/components/Header.js) because it renders directly in [`App.js`](./src/App.js).
 
 ![Diagram](./img/diagram.png)
 
@@ -28,7 +28,7 @@ The current version of this app is far away from what I expected to create. I li
 *Design*
 
 * Make it more interactive by addind CSS animations (add shining shadow on hover for pokemons, smoothly display pokemons on scroll)
-* Change `PokemonDescription.js`component design because it look poor now
+* Change [`PokemonDescription.js`](./src/components/PokemonDescription.js) component design because it looks poor now
 
 *Other*
 
