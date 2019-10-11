@@ -33,6 +33,7 @@ The current version of this app is far away from what I expected to create. I li
 *Other*
 
 * Share filter parameters as link
+
 **It could be done using redux (or packages like [redux-query-sync](https://www.npmjs.com/package/redux-query-sync)) or simply using React Router**
 
 ![DemoGif](./img/pokemons.gif)
