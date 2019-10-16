@@ -2,7 +2,7 @@ import React from "react";
 import TextInput from "./TextInput";
 import HeightFilter from "./HeightFilter";
 import WeaknessFilter from "./WeaknessFilter";
-import { Link } from "react-router-dom";
+import ResultsList from "./ResultsList";
 
 class FilteredResults extends React.Component {
   constructor() {
@@ -86,83 +86,15 @@ class FilteredResults extends React.Component {
         </div>
 
         <div className="FilteredPokemons__container container">
-          <div className="row justify-content-center">
-            {filteredPokemons.length > 0 &&
-              filteredPokemons.map((pokeRecord, i) => {
-                return (
-                  <Link
-                    to={{
-                      pathname: `/${pokeRecord.name}`,
-                      state: {
-                        name: pokeRecord.name,
-                        img: pokeRecord.img,
-                        weaknesses: pokeRecord.weaknesses,
-                        height: pokeRecord.height,
-                        egg: pokeRecord.egg,
-                        type: pokeRecord.type
-                      }
-                    }}
-                    className="record"
-                    key={pokeRecord.id + i}
-                  >
-                    <img src={pokeRecord.img} alt="pokemon_img" />
-                    <div>{pokeRecord.name}</div>
-                    <div className="Type__container row justify-content-center">
-                      {pokeRecord.type.map((type, i) => (
-                        <div
-                          className={
-                            type.toLocaleLowerCase() + " typeResults type"
-                          }
-                          key={type + i}
-                        >
-                          {type}
-                        </div>
-                      ))}
-                    </div>
-                  </Link>
-                );
-              })}
-            {query === "" &&
-              weakness === "" &&
-              height.length === 4 &&
-              pokemons.map((pokeRecord, i) => {
-                return (
-                  <Link
-                    to={{
-                      pathname: `/${pokeRecord.name}`,
-                      state: {
-                        name: pokeRecord.name,
-                        img: pokeRecord.img,
-                        weaknesses: pokeRecord.weaknesses,
-                        height: pokeRecord.height,
-                        egg: pokeRecord.egg,
-                        type: pokeRecord.type
-                      }
-                    }}
-                    className="record"
-                    key={pokeRecord.id + i}
-                  >
-                    <img src={pokeRecord.img} alt="pokemon_img" />
-                    <div>{pokeRecord.name}</div>
-                    <div className="Type__container row justify-content-center">
-                      {pokeRecord.type.map((type, i) => (
-                        <div
-                          className={
-                            type.toLocaleLowerCase() + " typeResults type"
-                          }
-                          key={type + i}
-                        >
-                          {type}
-                        </div>
-                      ))}
-                    </div>
-                  </Link>
-                );
-              })}
-            {((filteredPokemons.length === 0 &&
-              (query !== "" || weakness !== "")) ||
-              height === 0) && <div>No records found</div>}
-          </div>
+          {filteredPokemons.length > 0 && (
+            <ResultsList pokemons={filteredPokemons} />
+          )}
+          {query === "" && weakness === "" && height.length === 4 && (
+            <ResultsList pokemons={pokemons} />
+          )}
+          {((filteredPokemons.length === 0 &&
+            (query !== "" || weakness !== "")) ||
+            height === 0) && <div>No records found</div>}
         </div>
       </div>
     );
