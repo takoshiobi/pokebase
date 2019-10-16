@@ -37,7 +37,6 @@ class FilteredResults extends React.Component {
     )
       .then(response => response.json())
       .then(resData => {
-        console.log(JSON.stringify(resData));
         this.setState({ pokemons: resData.pokemon });
       });
   }
