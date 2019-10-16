@@ -3,6 +3,7 @@ import TextInput from "./TextInput";
 import HeightFilter from "./HeightFilter";
 import WeaknessFilter from "./WeaknessFilter";
 import ResultsList from "./ResultsList";
+import FilterParams from "./FilterParams";
 
 class FilteredResults extends React.Component {
   constructor() {
@@ -64,16 +65,7 @@ class FilteredResults extends React.Component {
       <div className="FiltersResults__container">
         <div className="container">
           <TextInput onQueryUpdate={this.handleQueryUpdate} />
-          <p>
-            {" "}
-            Selected height <span className="selectedHeight">{height}</span> (m)
-            and weakness{" "}
-            <span
-              className={weakness.toLocaleLowerCase() + " type optionWeakness"}
-            >
-              {weakness === "" ? "All" : weakness}
-            </span>{" "}
-          </p>
+          <FilterParams weakness={weakness} height={height} />
           <HeightFilter
             onHeightUpdate={this.handleHeightUpdate}
             pokemonsList={this.state.pokemons}
