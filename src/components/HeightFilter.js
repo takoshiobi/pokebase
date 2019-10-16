@@ -12,15 +12,6 @@ class HeightFilter extends React.Component {
   }
 
   render() {
-    /* useless
-        
-        var heightArray = [];
-        this.props.pokemonsList.map(pokemon => {
-            heightArray.push(parseFloat(pokemon.height));
-        });
-        let max = Math.max.apply(null, heightArray); 
-        
-        */
     return (
       <div className="HeightFilter__container">
         <Slider
