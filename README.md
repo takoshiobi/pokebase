@@ -19,7 +19,7 @@ The current version of this app is far away from what I expected to create. I li
 
 *Maintainability*
 
-* Remove duplicates from code and make conditional rendering smarter
+* Remove duplicates from code and make conditional rendering smarter (p)
 
 *Performance*
 
